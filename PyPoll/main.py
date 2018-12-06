@@ -21,17 +21,34 @@ with open(pypollCSV, newline='') as csvfile:
         voters.append(column[0])
 
 #pull unique candidates
-candidates_set = set(candidates)
-print(candidates_set)
-
-#---------------------------------1st commit 
+pull_candidates = set(candidates)
+print(pull_candidates)
+#--------------------------------------1st commit 
 
 #set voter variables
 total_voters = len(voters)
 print(total_voters)
 
-with open(pypollCSV, newline='') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
-    #skip the header
-    csv_header = next(csvfile)
-    #determines        
+#set candidate vote amounts
+li_vote = 0
+otooley_vote = 0
+khan_vote = 0
+correy_vote = 0
+
+#run loop to determine number of votes
+for candidate in candidates:
+    if candidate == "Li":
+        li_vote = li_vote + 1
+    elif candidate == "O'Tooley":
+        otooley_vote = otooley_vote + 1
+    elif candidate == "Khan":
+        khan_vote = khan_vote + 1
+    elif candidate == "Correy":
+        correy_vote = correy_vote + 1
+
+print(li_vote)
+print(otooley_vote)
+print(khan_vote)
+print(correy_vote)
+
+
