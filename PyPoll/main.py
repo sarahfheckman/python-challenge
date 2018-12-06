@@ -27,7 +27,6 @@ print(pull_candidates)
 
 #set voter variables
 total_voters = len(voters)
-print(total_voters)
 
 #set candidate vote amounts
 li_vote = 0
@@ -51,4 +50,27 @@ print(otooley_vote)
 print(khan_vote)
 print(correy_vote)
 
+#-----------------------------------------------2nd commit
+#create percentages
+li_percentage = round(((li_vote/total_voters) * 100), 3)
+otooley_percentage = round(((otooley_vote/total_voters) * 100), 3)
+khan_percentage = round(((khan_vote/total_voters) * 100), 3)
+correy_percentage = round(((correy_vote/total_voters) * 100), 3)
 
+#create function to consolidate results
+def election_results(candidate, percent, total):
+    statement = f"{candidate}: {percent}% ({total})"
+    print(statement)
+
+#printing everything
+print("ELECTION RESULTS")
+print("----------------------")
+print("Total Votes: " + str(total_voters))
+print("----------------------")
+election_results("Khan", khan_percentage, khan_vote)
+election_results("Correy", correy_percentage, correy_vote)
+election_results("Li", li_percentage, li_vote)
+election_results("O'Tooley", otooley_percentage, otooley_vote)
+print("----------------------")
+print("Winner: Khan")
+print("----------------------")
